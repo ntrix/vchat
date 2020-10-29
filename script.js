@@ -115,7 +115,7 @@ const vm = new Vue({
       await this.publish();
     },
     joinWithId: async function() {
-      const roomId = prompt("Dán Room ID vào đây nhé!");
+      const roomId = prompt("Room ID hierher einfügen!");
       if (roomId) {
         this.roomId = roomId;
         await this.join();
