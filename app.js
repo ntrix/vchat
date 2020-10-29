@@ -1,5 +1,5 @@
-const PROJECT_ID = "PROJECT_ID";
-const PROJECT_SECRET = "PROJECT_SECRET";
+const PROJECT_ID = "SKM8bT87PKaF1TjETEr8nggVIouaoDqq1";
+const PROJECT_SECRET = "WDZLRWpUUXhUZXFCZzVNOHZzR0dsTllYUTZjRFI2ZDg=";
 const BASE_URL = "https://api.stringee.com/v1/room2";
 
 class API {
@@ -11,9 +11,7 @@ class API {
 
   async createRoom() {
     const roomName = Math.random().toFixed(4);
-    const response = await axios.post(
-      `${BASE_URL}/create`,
-      {
+    const response = await axios.post(`${BASE_URL}/create`, {
         name: roomName,
         uniqueName: roomName
       },
@@ -106,3 +104,5 @@ class API {
 }
 
 const api = new API(PROJECT_ID, PROJECT_SECRET);
+
+//const api = new API(process.env.PROJECT_ID, process.env.PROJECT_SECRET);

@@ -4,8 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Clone Zoom Video Chat</title>
+    <title>Zoom-Klon Video-Chat-App</title>
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
@@ -18,18 +17,40 @@
     <script src="https://cdn.stringee.com/sdk/web/2.2.1/stringee-web-sdk.min.js"></script>
   </head>
   <body>
-    <div class="container has-text-centered">
+    <div class="container has-text-centered" v-cloak id="app">
       <h1 class="title">
-        Clone Zoom App
+        Zoom-Klon App
         <span class="header-highlight">Video Chat API</span>
       </h1>
+
+      <div>
+        <button class="button is-primary" v-if="!room" @click="createRoom">
+          Meeting erstellen
+        </button>
+
+        <button class="button is-info" v-if="!room" @click="joinWithId">
+          Meeting teilnehmen
+        </button>
+
+        <button class="button is-info" v-if="room" @click="publish(true)">
+          ScreenShare
+        </button>
+      </div>
+
+      <div v-if="roomId" class="info">
+        <p>Du bist im Meeting-Raum (Nr. <strong>{{roomId}}</strong>).</p>
+        <p>
+          Link an den anderen Teilnehmern senden
+          <a v-bind:href="roomUrl" target="_blank">{{roomUrl}}</a>.
+        </p>
+        <p>Oder Raumnummer <code>{{roomId}}</code> kopieren und senden.</p>
+      </div>
     </div>
 
     <div class="container">
       <div id="videos"></div>
     </div>
   </body>
-
-  <script src="/api.js"></script>
-  <script src="/script.js"></script>
+  <script src="./api.js"></script>
+  <script src="./script.js"></script>
 </html>
