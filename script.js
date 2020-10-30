@@ -11,7 +11,7 @@ const vm = new Vue({
   },
   computed: {
     roomUrl: function() {
-      return `https://${location.href}?room=${this.roomId}`;
+      return `${location.href}?room=${this.roomId}`;
     }
   },
   async mounted() {
@@ -115,7 +115,7 @@ const vm = new Vue({
       await this.publish();
     },
     joinWithId: async function() {
-      const roomId = prompt("Bitte die Raumnummer einfügen!");
+      const roomId = prompt("Bitte die Raum-Id-Nummer einfügen!");
       if (roomId) {
         this.roomId = roomId;
         await this.join();
