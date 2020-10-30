@@ -38,12 +38,12 @@
       </div>
 
       <div v-if="roomId" class="info">
-        <p>Du bist im Meeting-Raum (Nr. <strong>{{roomId}}</strong>).</p>
+        <p>Du bist im Meeting-Raum.</p>
         <p>
-          Link an den anderen Teilnehmern senden
-          <a v-bind:href="roomUrl" target="_blank">{{roomUrl}}</a>.
+          Du kannst jetzt <a v-bind:href="roomUrl" target="_blank">diesen Link</a><br/>
+          oder Raum-Id-Nummer <code>{{roomId}}</code><br/>
+          an den anderen Teilnehmern per Email senden.
         </p>
-        <p>Oder Raumnummer <code>{{roomId}}</code> kopieren und senden.</p>
       </div>
     </div>
 
