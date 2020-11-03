@@ -11,7 +11,7 @@ features:
 
 - screenshare completion/ remove after share
 
-- send roomUrl with roomID direkt per sendmail button
+- send roomUrl with roomID direkt per mail sendgrid
 
 - user signup/login
 
